@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* ===== Auranotes Design Tokens ===== */
+@theme {
+  --color-bg: #1a1b16;
+  --color-bg-deep: #141510;
+  --color-surface: #222318;
+  --color-surface-hover: #2a2b20;
+  --color-surface-active: #32332a;
+  --color-border: #2e302a;
+  --color-border-accent: #A6E22E30;
+  --color-accent: #A6E22E;
+  --color-accent-hover: #b8f640;
+  --color-accent-dim: #A6E22E15;
+  --color-accent-glow: #A6E22E10;
+  --color-text: #F8F8F2;
+  --color-text-secondary: #F8F8F2B0;
+  --color-text-muted: #F8F8F270;
+  --color-text-faint: #F8F8F235;
+  --color-danger: #F92672;
+  --color-danger-dim: #F9267218;
+  --color-pin: #E6DB74;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+}
+
+/* ===== Global Reset ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+body {
+  background: transparent;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: var(--color-accent);
+  color: #1a1b16;
+}
+
+/* ===== Animations ===== */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 8px #A6E22E20; }
+  50% { box-shadow: 0 0 20px #A6E22E15; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.5s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* ===== Selectable editor text ===== */
+.selectable,
+.selectable * {
+  user-select: text;
+}
