@@ -40,41 +40,28 @@ const QuickInput: React.FC = () => {
   }, []);
 
   return (
-    <div className="border-t border-border bg-bg-deep">
-      <div className="flex items-center gap-3 px-5 py-3">
-        {/* Icon */}
+    <div className="quick-input-bar">
+      <div className="quick-input-inner">
         <button
           onClick={handleSubmit}
           disabled={!value.trim()}
-          className="flex items-center justify-center w-8 h-8 rounded-xl
-                     bg-accent text-bg-deep shrink-0
-                     hover:bg-accent-hover
-                     disabled:opacity-20 disabled:cursor-not-allowed
-                     transition-all duration-200 active:scale-90"
+          className="quick-add-btn"
+          title="Add note"
         >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-            <path d="M12 4v16m8-8H4" />
-          </svg>
+          +
         </button>
 
-        {/* Input */}
         <input
           ref={inputRef}
           type="text"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="New note…  (try  Title: your content)"
-          className="flex-1 bg-transparent text-[14px] text-text font-medium
-                     placeholder:text-text-faint/50 outline-none"
+          placeholder="New note…  try  Title: your content"
+          className="quick-input-field"
         />
 
-        {/* Shortcut hint */}
-        <div className="hidden sm:flex items-center gap-1.5 shrink-0">
-          <kbd className="px-1.5 py-0.5 rounded-md bg-surface text-[10px] text-text-faint font-mono border border-border">
-            ↵
-          </kbd>
-        </div>
+        <span className="quick-enter-hint">↵</span>
       </div>
     </div>
   );
