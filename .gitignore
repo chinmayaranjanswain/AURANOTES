@@ -22,3 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables (API Keys, Secrets)
+.env
+.env.*
+
+# Documentation (Internal only)
+READY.md
+SUPABASE_SETUP.md
+
+# Desktop Application
+# Ignoring so web hosting providers (Vercel/Netlify) don't confuse this for a Rust project
+src-tauri/
