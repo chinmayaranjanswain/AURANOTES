@@ -31,13 +31,13 @@ export default defineConfig(async () => ({
         theme_color: "#A6E22E",
         icons: [
           {
-            src: "/icons/icon-192.png",
+            src: "/icons/AUATNOTES-192.png",
             sizes: "192x192",
             type: "image/png",
             purpose: "any maskable",
           },
           {
-            src: "/icons/icon-512.png",
+            src: "/icons/AUATNOTES-512.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any maskable",
