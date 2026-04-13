@@ -28,7 +28,7 @@ export default defineConfig(async () => ({
         display: "standalone",
         orientation: "portrait",
         background_color: "#1E1E1E",
-        theme_color: "#A6E22E",
+        theme_color: "#1E1E1E",
         icons: [
           {
             src: "/icons/AUATNOTES-192.png",
